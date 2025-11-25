@@ -3,9 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nexo AI Solutions - Automatización con Inteligencia Artificial para negocios</title>
-  <meta name="description" content="Nexo AI Solutions implementa asistentes con Inteligencia Artificial para atender llamadas, WhatsApp y redes sociales en negocios como canchas deportivas, restaurantes, barberías y más.">
+  <title>Nexo AI Solutions - Agencia de automatización con IA</title>
+  <meta name="description" content="Nexo AI Solutions es una agencia de automatización con IA que ayuda a negocios de servicios en Lima y Trujillo a mejorar su atención al cliente: canchas de fútbol, barberías, salones de belleza y gimnasios.">
   <style>
+    :root {
+      --accent: #06b6d4;
+      --accent-soft: rgba(6, 182, 212, 0.12);
+      --bg: #020617;
+      --bg-soft: #020617;
+      --border: #1f2937;
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -14,8 +24,8 @@
     }
 
     body {
-      background: #020617;
-      color: #e5e7eb;
+      background: var(--bg);
+      color: var(--text-main);
       line-height: 1.6;
     }
 
@@ -24,13 +34,18 @@
       color: inherit;
     }
 
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
     header {
       position: sticky;
       top: 0;
       z-index: 50;
       backdrop-filter: blur(12px);
       background: rgba(2, 6, 23, 0.9);
-      border-bottom: 1px solid #1f2937;
+      border-bottom: 1px solid #020617;
     }
 
     .container {
@@ -43,18 +58,38 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 1rem 0;
+      padding: 0.9rem 0;
+      gap: 1rem;
     }
 
-    .logo {
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .logo-img {
+      height: 36px;
+      width: auto;
+    }
+
+    .logo-text-main {
       font-weight: 700;
-      font-size: 1.1rem;
       letter-spacing: 0.08em;
-      text-transform: uppercase;
+      font-size: 0.95rem;
     }
 
-    .logo span {
-      color: #22c55e;
+    .logo-text-sub {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-muted);
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
     }
 
     .nav-links {
@@ -75,28 +110,28 @@
       display: inline-block;
       padding: 0.7rem 1.4rem;
       border-radius: 999px;
-      background: linear-gradient(135deg, #22c55e, #16a34a);
+      background: linear-gradient(135deg, var(--accent), #0ea5e9);
       color: #022c22;
       font-weight: 600;
       font-size: 0.9rem;
       border: none;
       cursor: pointer;
       transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
-      box-shadow: 0 10px 25px rgba(34, 197, 94, 0.25);
+      box-shadow: 0 10px 25px rgba(6, 182, 212, 0.35);
     }
 
     .btn-primary:hover {
       transform: translateY(-1px);
-      box-shadow: 0 15px 30px rgba(34, 197, 94, 0.3);
+      box-shadow: 0 15px 30px rgba(14, 165, 233, 0.4);
       opacity: 0.95;
     }
 
     .btn-outline {
       display: inline-block;
-      padding: 0.65rem 1.2rem;
+      padding: 0.6rem 1.2rem;
       border-radius: 999px;
       border: 1px solid #4b5563;
-      color: #e5e7eb;
+      color: var(--text-main);
       font-size: 0.85rem;
       cursor: pointer;
       background: transparent;
@@ -121,22 +156,22 @@
       font-size: 0.8rem;
       text-transform: uppercase;
       letter-spacing: 0.12em;
-      color: #a3e635;
+      color: var(--accent);
       margin-bottom: 0.75rem;
     }
 
     .hero-title {
-      font-size: clamp(2.1rem, 4vw, 3rem);
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
       font-weight: 800;
       margin-bottom: 1rem;
     }
 
     .hero-title span {
-      color: #22c55e;
+      color: var(--accent);
     }
 
     .hero-subtitle {
-      color: #9ca3af;
+      color: var(--text-muted);
       font-size: 0.96rem;
       max-width: 30rem;
       margin-bottom: 1.5rem;
@@ -155,7 +190,7 @@
       flex-wrap: wrap;
       gap: 1.5rem;
       font-size: 0.8rem;
-      color: #9ca3af;
+      color: var(--text-muted);
     }
 
     .hero-meta span {
@@ -165,11 +200,11 @@
     }
 
     .hero-card {
-      background: radial-gradient(circle at top left, #22c55e15, #020617);
+      background: radial-gradient(circle at top left, rgba(6, 182, 212, 0.18), var(--bg-soft));
       border-radius: 1.5rem;
-      border: 1px solid #1f2937;
-      padding: 1.75rem;
-      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.8);
+      border: 1px solid var(--border);
+      padding: 1.8rem;
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.9);
     }
 
     .hero-card-title {
@@ -180,7 +215,7 @@
 
     .hero-card-sub {
       font-size: 0.82rem;
-      color: #9ca3af;
+      color: var(--text-muted);
       margin-bottom: 1.3rem;
     }
 
@@ -196,9 +231,9 @@
       border-radius: 999px;
       background: #020617;
       font-size: 0.75rem;
-      color: #9ca3af;
+      color: var(--text-muted);
       margin-bottom: 0.4rem;
-      border: 1px solid #1f2937;
+      border: 1px solid var(--border);
     }
 
     .hero-pill {
@@ -209,7 +244,7 @@
       align-items: center;
       gap: 0.4rem;
       font-size: 0.75rem;
-      color: #9ca3af;
+      color: var(--text-muted);
       margin-top: 1rem;
     }
 
@@ -217,8 +252,8 @@
       font-size: 0.7rem;
       padding: 0.25rem 0.6rem;
       border-radius: 999px;
-      background: rgba(34, 197, 94, 0.1);
-      color: #bbf7d0;
+      background: var(--accent-soft);
+      color: #e0faff;
     }
 
     section {
@@ -232,9 +267,9 @@
     }
 
     .section-subtitle {
-      color: #9ca3af;
+      color: var(--text-muted);
       font-size: 0.95rem;
-      max-width: 32rem;
+      max-width: 34rem;
       margin-bottom: 2rem;
     }
 
@@ -244,11 +279,17 @@
       gap: 1.75rem;
     }
 
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.75rem;
+    }
+
     .card {
       border-radius: 1rem;
-      border: 1px solid #1f2937;
+      border: 1px solid var(--border);
       padding: 1.5rem;
-      background: radial-gradient(circle at top left, #22c55e08, #020617);
+      background: radial-gradient(circle at top left, rgba(6, 182, 212, 0.08), var(--bg-soft));
     }
 
     .card h3 {
@@ -258,7 +299,7 @@
 
     .card p {
       font-size: 0.9rem;
-      color: #9ca3af;
+      color: var(--text-muted);
       margin-bottom: 0.75rem;
     }
 
@@ -279,8 +320,8 @@
       padding: 0.2rem 0.55rem;
       border-radius: 999px;
       background: #020617;
-      border: 1px solid #1f2937;
-      color: #9ca3af;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
     }
 
     .steps {
@@ -298,12 +339,12 @@
       width: 2rem;
       height: 2rem;
       border-radius: 999px;
-      border: 1px solid #22c55e;
+      border: 1px solid var(--accent);
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 0.85rem;
-      color: #bbf7d0;
+      color: #e0faff;
       flex-shrink: 0;
     }
 
@@ -314,7 +355,7 @@
 
     .step-content p {
       font-size: 0.9rem;
-      color: #9ca3af;
+      color: var(--text-muted);
     }
 
     .contact {
@@ -331,18 +372,19 @@
 
     label {
       font-size: 0.85rem;
-      color: #9ca3af;
+      color: var(--text-muted);
       display: block;
       margin-bottom: 0.25rem;
     }
 
-    input, textarea {
+    input,
+    textarea {
       width: 100%;
       padding: 0.7rem 0.9rem;
       border-radius: 0.75rem;
       border: 1px solid #374151;
       background: #020617;
-      color: #e5e7eb;
+      color: var(--text-main);
       font-size: 0.9rem;
     }
 
@@ -351,9 +393,10 @@
       resize: vertical;
     }
 
-    input:focus, textarea:focus {
-      outline: 1px solid #22c55e;
-      border-color: #22c55e;
+    input:focus,
+    textarea:focus {
+      outline: 1px solid var(--accent);
+      border-color: var(--accent);
     }
 
     footer {
@@ -368,7 +411,7 @@
       flex-wrap: wrap;
       justify-content: space-between;
       gap: 1rem;
-      align-items: cibter;
+      align-items: center;
     }
 
     .footer-links {
@@ -376,8 +419,36 @@
       gap: 1.5rem;
     }
 
+    /* WhatsApp floating button */
+    .wa-floating {
+      position: fixed;
+      right: 1.2rem;
+      bottom: 1.2rem;
+      z-index: 60;
+    }
+
+    .wa-floating a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 3.2rem;
+      height: 3.2rem;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 15px 30px rgba(6, 182, 212, 0.45);
+      color: #022c22;
+      font-weight: 700;
+      font-size: 1.4rem;
+    }
+
+    .wa-floating a:hover {
+      transform: translateY(-1px);
+    }
+
     @media (max-width: 900px) {
-      .hero, .contact {
+      .hero,
+      .contact,
+      .grid-2 {
         grid-template-columns: minmax(0, 1fr);
       }
     }
@@ -386,11 +457,18 @@
       .nav-links {
         display: none;
       }
+
       .hero {
         padding-top: 2.5rem;
       }
+
       .grid-3 {
         grid-template-columns: minmax(0, 1fr);
+      }
+
+      .wa-floating {
+        right: 1rem;
+        bottom: 1rem;
       }
     }
   </style>
@@ -400,14 +478,22 @@
 <header>
   <div class="container">
     <nav class="nav">
-      <div class="logo">NEXO<span>AI</span> SOLUTIONS</div>
-      <div class="nav-links">
-        <a href="#servicios">Servicios</a>
-        <a href="#como-funciona">Cómo trabajamos</a>
-        <a href="#contacto">Contacto</a>
+      <div class="logo-wrap">
+        <img src="logo-nexo.png" alt="Logo de Nexo AI Solutions" class="logo-img" />
+        <div>
+          <div class="logo-text-main">NEXO AI SOLUTIONS</div>
+          <div class="logo-text-sub">AGENCIA DE AUTOMATIZACIÓN CON IA</div>
+        </div>
       </div>
-      <!-- REEMPLAZA 51999999999 POR TU NÚMERO SIN + -->
-      <a href="https://wa.me/51962766870" class="btn-outline">WhatsApp</a>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="#servicios">Servicios</a>
+          <a href="#casos-uso">Casos de uso</a>
+          <a href="#como-funciona">Cómo trabajamos</a>
+          <a href="#contacto">Contacto</a>
+        </div>
+        <a href="https://wa.me/51962766870" class="btn-outline">WhatsApp</a>
+      </div>
     </nav>
   </div>
 </header>
@@ -416,48 +502,47 @@
   <!-- HERO -->
   <section class="container hero">
     <div>
-      <div class="hero-kicker">Automatización con Inteligencia Artificial</div>
+      <div class="hero-kicker">Lima &amp; Trujillo · Negocios de servicios</div>
       <h1 class="hero-title">
         Automatizamos la atención de tu <span>negocio</span> con IA.
       </h1>
       <p class="hero-subtitle">
-        Nexo AI Solutions implementa asistentes con inteligencia artificial para que tus clientes
-        puedan escribirte o llamarte en cualquier momento por WhatsApp, redes sociales o teléfono,
-        sin que tengas que estar pegado al celular.
+        Somos una agencia de automatización con inteligencia artificial que ayuda a canchas de fútbol,
+        barberías, salones de belleza y gimnasios a responder más rápido, ordenar sus reservas y no perder oportunidades.
       </p>
       <div class="hero-actions">
-        <a href="#contacto" class="btn-primary">Agendar una llamada</a>
-        <a href="#servicios" class="btn-outline">Ver qué podemos hacer</a>
+        <a href="https://wa.me/51962766870" class="btn-primary">Agendar una llamada por WhatsApp</a>
+        <a href="#casos-uso" class="btn-outline">Ver en qué te podemos ayudar</a>
       </div>
       <div class="hero-meta">
-        <span>✔ Pensado para negocios locales</span>
-        <span>✔ Canchas deportivas, restaurantes, barberías y más</span>
+        <span>✔ Enfoque en negocios presenciales</span>
+        <span>✔ Operamos en Lima y Trujillo</span>
       </div>
     </div>
 
     <aside class="hero-card">
-      <div class="hero-card-title">¿Qué es Nexo AI Solutions?</div>
+      <div class="hero-card-title">Qué hace Nexo AI Solutions</div>
       <div class="hero-card-sub">
-        Un equipo pequeño que usa Inteligencia Artificial para ayudarte a recibir más reservas y mensajes,
-        sin complicarte con la parte técnica.
+        Diseñamos e implementamos asistentes con IA para tus canales de comunicación,
+        con el objetivo de mejorar tiempos de respuesta y dar información clara a tus clientes.
       </div>
       <div class="hero-card-grid">
         <div>
-          <div class="pill">Qué hacemos</div>
-          <p>Diseñamos e implementamos asistentes virtuales que responden a tus clientes de forma rápida y clara.</p>
+          <div class="pill">Resultados esperados</div>
+          <p>Menos mensajes sin responder, reservas más ordenadas y clientes mejor informados.</p>
         </div>
         <div>
-          <div class="pill">Por dónde atienden</div>
-          <p>WhatsApp, llamadas telefónicas y mensajes en redes sociales (por ejemplo, Instagram o Facebook).</p>
+          <div class="pill">Canales que trabajamos</div>
+          <p>WhatsApp, líneas telefónicas y mensajería desde redes sociales.</p>
         </div>
         <div>
           <div class="pill">Para qué negocios</div>
-          <p>Canchas de fútbol, restaurantes, barberías, salones de belleza, gimnasios y otros servicios locales.</p>
+          <p>Canchas de fútbol, barberías, salones de belleza, gimnasios y otros servicios presenciales.</p>
         </div>
       </div>
       <div class="hero-pill">
-        <span class="badge">Enfoque práctico</span>
-        <span>Implementaciones simples, explicadas sin tecnicismos.</span>
+        <span class="badge">Acompañamiento cercano</span>
+        <span>Te guiamos en todo el proceso, desde el diseño hasta la operación diaria.</span>
       </div>
     </aside>
   </section>
@@ -467,43 +552,43 @@
     <div class="container">
       <h2 class="section-title">Servicios</h2>
       <p class="section-subtitle">
-        Empezamos con soluciones claras y concretas. La idea es que tu negocio sienta el beneficio
-        de la IA desde el primer mes, sin procesos eternos ni promesas vacías.
+        Trabajamos con un enfoque de agencia: analizamos tu situación actual,
+        proponemos una solución de automatización y la implementamos cuidando cada detalle de la experiencia del cliente.
       </p>
       <div class="grid-3">
         <div class="card">
           <h3>Asistente por WhatsApp</h3>
           <p>
-            Configuramos un asistente que responde preguntas frecuentes, muestra precios,
-            horarios y toma datos básicos de reservas directamente por WhatsApp.
+            Implementamos un asistente que responde consultas frecuentes, comparte información clave
+            (precios, horarios, ubicación) y recopila datos esenciales de reservas o citas.
           </p>
-          <small>Ideal para: canchas deportivas, restaurantes, delivery y servicios con alta demanda.</small>
+          <small>Especialmente útil para canchas de fútbol, barberías y salones de belleza.</small>
           <div class="tags">
-            <span class="tag">Mensajes 24/7</span>
-            <span class="tag">Preguntas frecuentes</span>
+            <span class="tag">Disponibilidad 24/7</span>
+            <span class="tag">Información clara</span>
           </div>
         </div>
 
         <div class="card">
           <h3>Atención telefónica automatizada</h3>
           <p>
-            Creamos un flujo de llamadas donde una voz guiada (con IA) puede saludar, hacer
-            preguntas simples y registrar la solicitud del cliente cuando no puedes contestar.
+            Configuramos un flujo de atención telefónica con IA que recibe llamadas, informa al cliente
+            y registra datos cuando no es posible atender personalmente.
           </p>
-          <small>Útil cuando recibes muchas llamadas y no siempre puedes responder al momento.</small>
+          <small>Ideal para horarios de alta demanda o cuando la línea se encuentra ocupada.</small>
           <div class="tags">
-            <span class="tag">Recibe más reservas</span>
             <span class="tag">Menos llamadas perdidas</span>
+            <span class="tag">Imagen profesional</span>
           </div>
         </div>
 
         <div class="card">
-          <h3>Chat para redes sociales</h3>
+          <h3>Mensajería para redes sociales</h3>
           <p>
-            Unificamos respuestas básicas para tus mensajes en Instagram o Facebook,
-            para que nadie se quede sin respuesta aunque escriban fuera de horario.
+            Estandarizamos respuestas en canales como Instagram o Facebook para mantener una atención consistente,
+            incluso fuera del horario en el que el equipo está conectado.
           </p>
-          <small>Te ayudamos a mantener presencia constante sin estar conectado todo el día.</small>
+          <small>Ayuda a que tu marca mantenga presencia y orden en bandeja de entrada.</small>
           <div class="tags">
             <span class="tag">Instagram</span>
             <span class="tag">Facebook</span>
@@ -513,46 +598,109 @@
     </div>
   </section>
 
-  <!-- CÓMO FUNCIONA -->
+  <!-- CASOS DE USO -->
+  <section id="casos-uso">
+    <div class="container">
+      <h2 class="section-title">Casos de uso</h2>
+      <p class="section-subtitle">
+        Estos son algunos escenarios donde la automatización con IA aporta valor inmediato para negocios
+        de servicios en Lima y Trujillo.
+      </p>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Canchas de fútbol</h3>
+          <p>
+            El asistente responde tarifas, horarios disponibles, ubicación y recopila datos para agendar la reserva
+            (día, hora, tipo de cancha y nombre del cliente).
+          </p>
+          <small>Reduce mensajes repetitivos y te ayuda a no perder reservas por falta de respuesta.</small>
+          <div class="tags">
+            <span class="tag">Fútbol 7 / 11</span>
+            <span class="tag">Fulbito</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Barberías y salones de belleza</h3>
+          <p>
+            La automatización ayuda a coordinar citas indicando servicio, profesional (si aplica) y rango de hora.
+            También puede informar sobre servicios y promociones vigentes.
+          </p>
+          <small>Ideal para manejar agenda sin saturar las conversaciones manuales.</small>
+          <div class="tags">
+            <span class="tag">Citas agendadas</span>
+            <span class="tag">Servicios y precios base</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Gimnasios y centros de entrenamiento</h3>
+          <p>
+            El asistente responde sobre membresías, horarios de clases, ubicación y procesos de inscripción,
+            además de derivar consultas puntuales al equipo.
+          </p>
+          <small>Ayuda a que más personas entiendan rápidamente qué ofreces y cómo empezar.</small>
+          <div class="tags">
+            <span class="tag">Membresías</span>
+            <span class="tag">Clases grupales</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CÓMO TRABAJAMOS -->
   <section id="como-funciona">
     <div class="container">
       <h2 class="section-title">Cómo trabajamos</h2>
       <p class="section-subtitle">
-        Nuestro objetivo es que entiendas lo que se va a hacer en tu negocio. Nada de
-        palabras raras: pasos claros y acompañamiento durante la implementación.
+        Abordamos cada proyecto como una consultoría de atención al cliente apoyada en IA:
+        escuchamos, diseñamos la solución y la acompañamos en su puesta en marcha.
       </p>
-      <div class="steps">
-        <div class="step-item">
-          <div class="step-number">1</div>
-          <div class="step-content">
-            <h3>Reunión rápida</h3>
-            <p>
-              Conversamos sobre tu negocio, qué canales usas (WhatsApp, llamada, redes)
-              y qué tipo de mensajes recibes normalmente.
-            </p>
+      <div class="grid-2">
+        <div class="steps">
+          <div class="step-item">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3>Diagnóstico inicial</h3>
+              <p>Revisamos cómo atiendes hoy: canales, volumen de mensajes, principales dudas de tus clientes.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3>Diseño de la solución</h3>
+              <p>Definimos el asistente, el tono de comunicación, la información que debe manejar y cómo integrarlo a tu operación.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3>Implementación</h3>
+              <p>Configuramos la solución en los canales elegidos y realizamos las pruebas necesarias antes de ponerla en producción.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h3>Seguimiento y ajustes</h3>
+              <p>Monitoreamos el funcionamiento inicial y realizamos ajustes según el comportamiento real de tus clientes.</p>
+            </div>
           </div>
         </div>
-
-        <div class="step-item">
-          <div class="step-number">2</div>
-          <div class="step-content">
-            <h3>Diseño del asistente</h3>
-            <p>
-              Proponemos un flujo simple: qué responde, qué datos pide y cómo te envía
-              la información (por ejemplo, a tu WhatsApp o correo).
-            </p>
-          </div>
-        </div>
-
-        <div class="step-item">
-          <div class="step-number">3</div>
-          <div class="step-content">
-            <h3>Implementación y soporte</h3>
-            <p>
-              Configuramos la solución, la probamos contigo y te explicamos cómo usarla.
-              Si más adelante quieres ajustar respuestas, también te acompañamos.
-            </p>
-          </div>
+        <div class="card">
+          <h3>Qué buscamos en cada proyecto</h3>
+          <p>
+            Nuestras implementaciones están orientadas a resultados concretos para tu negocio:
+          </p>
+          <ul style="margin-left:1.1rem; margin-top:0.6rem; font-size:0.9rem; color:var(--text-muted);">
+            <li>Mejorar los tiempos de respuesta percibidos por tus clientes.</li>
+            <li>Ordenar reservas, citas y consultas en un solo lugar.</li>
+            <li>Proyectar una imagen profesional y coherente en cada canal.</li>
+          </ul>
+          <p style="margin-top:0.75rem; font-size:0.88rem; color:var(--text-muted);">
+            Cada negocio es distinto, por eso adaptamos la configuración a tu realidad en Lima o Trujillo.
+          </p>
         </div>
       </div>
     </div>
@@ -564,18 +712,17 @@
       <div>
         <h2 class="section-title">Conversemos sobre tu negocio</h2>
         <p class="section-subtitle">
-          Déjanos tus datos y cuéntanos brevemente qué tipo de negocio tienes.
-          Te responderemos lo antes posible para coordinar una llamada o videollamada.
+          Cuéntanos qué tipo de negocio administras y qué te gustaría mejorar en tu atención al cliente.
+          Te responderemos para coordinar una llamada y evaluar la mejor forma de apoyarte.
         </p>
-        <!-- REEMPLAZA el correo contacto@nexoaisolutions.lat por el tuyo real -->
-        <form action="mailto:contacto@nexoaisolutions.lat" method="post" enctype="text/plain">
+        <form id="contact-form">
           <div>
             <label for="nombre">Nombre</label>
             <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
           </div>
           <div>
             <label for="negocio">Tipo de negocio</label>
-            <input type="text" id="negocio" name="negocio" placeholder="Ej: cancha de fútbol, restaurante, barbería" />
+            <input type="text" id="negocio" name="negocio" placeholder="Ej: cancha de fútbol, barbería, salón de belleza, gimnasio" />
           </div>
           <div>
             <label for="email">Correo electrónico</label>
@@ -583,7 +730,7 @@
           </div>
           <div>
             <label for="mensaje">Mensaje</label>
-            <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos qué te gustaría automatizar"></textarea>
+            <textarea id="mensaje" name="mensaje" placeholder="Ej: recibir mejor las reservas, ordenar las citas, responder dudas frecuentes..."></textarea>
           </div>
           <button type="submit" class="btn-primary">Enviar mensaje</button>
         </form>
@@ -591,15 +738,15 @@
       <div>
         <div class="card">
           <h3>Contacto directo</h3>
-          <p style="margin-bottom:0.75rem;">Si prefieres, puedes escribirnos o llamarnos directamente:</p>
+          <p style="margin-bottom:0.75rem;">También puedes escribirnos o llamarnos directamente:</p>
           <p style="font-size:0.9rem; margin-bottom:0.5rem;">
-            📞 <strong>[Tu número de teléfono]</strong><br />
+            📍 Lima &amp; Trujillo, Perú<br />
+            📞 <strong>+51 962 766 870</strong><br />
             💬 WhatsApp:
-            <!-- REEMPLAZA 51999999999 POR TU NÚMERO -->
             <a href="https://wa.me/51962766870">Enviar mensaje por WhatsApp</a><br />
             ✉ Correo: <strong>estefanoplasencia@nexoaisolutions.lat</strong>
           </p>
-          <small>Horario de atención sugerido: Lun - Sáb, 9:00 a 19:00 (puedes cambiarlo).</small>
+          <small>Horario de atención: todos los días, de 10:00 a.m. a 10:00 p.m.</small>
         </div>
       </div>
     </div>
@@ -611,13 +758,47 @@
     <div>© <span id="year"></span> Nexo AI Solutions. Todos los derechos reservados.</div>
     <div class="footer-links">
       <a href="#servicios">Servicios</a>
+      <a href="#casos-uso">Casos de uso</a>
       <a href="#contacto">Contacto</a>
     </div>
   </div>
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </footer>
+
+<!-- Botón flotante de WhatsApp -->
+<div class="wa-floating">
+  <a href="https://wa.me/51962766870" aria-label="Chatear por WhatsApp">✆</a>
+</div>
+
+<script>
+  // Año en el footer
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Envío del formulario usando mailto (manteniendo la página segura)
+  const form = document.getElementById('contact-form');
+
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const nombre = document.getElementById('nombre')?.value || '';
+      const negocio = document.getElementById('negocio')?.value || '';
+      const email = document.getElementById('email')?.value || '';
+      const mensaje = document.getElementById('mensaje')?.value || '';
+
+      const cuerpo = encodeURIComponent(
+        `Nombre: ${nombre}\n` +
+        `Correo: ${email}\n` +
+        `Negocio: ${negocio}\n\n` +
+        `Mensaje:\n${mensaje}`
+      );
+
+      window.location.href =
+        `mailto:estefanoplasencia@nexoaisolutions.lat` +
+        `?subject=Nuevo contacto desde la web` +
+        `&body=${cuerpo}`;
+    });
+  }
+</script>
 
 </body>
 </html>
